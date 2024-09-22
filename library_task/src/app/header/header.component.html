@@ -1,0 +1,50 @@
+
+<div class="d-flex">
+  <!-- Sidebar -->
+  <div class="sideBar" id="sidebar-wrapper">
+    <div class="sidebar-heading">
+      <img src="assets/images/headerlogo.png" class="img-fluid logo">
+
+  </div>
+    <div class="list-group list-group-flush">
+      <a routerLink="/dashboard" routerLinkActive="active" class="list-group-item list-group-item-action" [class.active]="isActive('/dashboard')">
+        <i class="bi bi-house"></i> Dashboard
+      </a>
+      <a routerLink="/addbook" routerLinkActive="active" class="list-group-item list-group-item-action" [class.active]="isActive('/addbook')">
+        <i class="bi bi-journal-plus"></i> Add Book
+      </a>
+      <a routerLink="/deletebook" routerLinkActive="active" class="list-group-item list-group-item-action" [class.active]="isActive('/deletebook')">
+        <i class="bi bi-journal-minus"></i> Delete Book
+      </a>
+      <a routerLink="/viewbook" routerLinkActive="active" class="list-group-item list-group-item-action" [class.active]="isActive('/viewbook')">
+        <i class="bi bi-journal-bookmark"></i> View Book
+      </a>
+      <a routerLinkActive="active" class="list-group-item list-group-item-action" [class.active]="isActive('/addstu')">
+        <i class="bi bi-person-plus"></i> Add Student
+      </a>
+      <a  routerLinkActive="active" class="list-group-item list-group-item-action" [class.active]="isActive('/issuebook')">
+        <i class="bi bi-journal-medical"></i>Issue Book
+      </a>
+      <a  routerLinkActive="active" class="list-group-item list-group-item-action" [class.active]="isActive('/returnbook')">
+        <i class="bi bi-journal-x"></i> Return Book
+    </a>
+    <a routerLinkActive="active" class="list-group-item list-group-item-action" [class.active]="isActive('/report')">
+    <i class="bi bi-telephone"></i> Reports
+  </a>
+  <a (click)="confirmLogout()" routerLinkActive="active" class="list-group-item list-group-item-action" [class.active]="isActive('/report')">
+    <i class="bi bi-box-arrow-left"></i> Logout
+  </a>
+    </div>
+  </div>
+
+
+</div>
+
+
+<div *ngIf="showLogoutPopup" class="popup">
+    <div class="popup-content p-4">
+      <p>Are you sure you want to logout?</p>
+      <button class="btn btn-danger" (click)="logout()">Yes</button>
+      <button class="btn btn-primary mx-3" (click)="cancelLogout()">No</button>
+    </div>
+  </div>
